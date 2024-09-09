@@ -1,0 +1,21 @@
+#### Configuração Mysql properties.yaml ####
+
+spring:
+  application:
+    name: usuario
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_usuario
+    username: dev
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        package-to-scan: com.magtechnologies.usuario.infrastructure.entities
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
